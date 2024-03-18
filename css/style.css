@@ -6,6 +6,18 @@ html {
 *::before {
   box-sizing: inherit;
 }
+html, 
+body{
+  height: 100%;
+}
+.wrapper{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.main{
+  flex-grow: 1;
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -348,14 +360,109 @@ body {
   font-weight: 300;
   line-height: normal;
 }
-
 .prioritise__text{
   font-weight: 600;
   margin-bottom: 30px;
   line-height: normal;
 }
-
-
+/* Footer */
+.footer{
+  padding: 100px 0 20px;
+  background-color: #F7F2EA;
+}
+.footer__inner{
+  margin-bottom: 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0 40px;
+}
+.footer__products-title,
+.footer__company-title,
+.footer__contacts-title{
+  font-weight: 400;
+  font-size: 24px;
+  font-family: "Cormorant", serif;
+  margin-bottom: 50px;
+}
+.footer__products-item,
+.footer__company-item{
+  margin-bottom: 20px;
+}
+.footer__blockquote{
+  margin-top: 80px;
+}
+.footer__blockquote-text{
+  font-style: italic;
+  margin-bottom: 20px;
+}
+.footer__blockquote-author{
+  font-size: 12px;
+  font-style: normal;
+}
+.footer__blockquote-author span{
+  display: block;
+}
+.footer__contacts-text{
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+.footer__nav{
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer__nav-logo{
+  margin-right: 40px;
+}
+.footer__nav-contacts{
+  margin-top: 20px;
+}
+.footer__nav-phone,
+.footer__nav-mail{
+  display: block;
+  font-size: 13px;
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 20px;
+}
+.footer__nav-phone::before,
+.footer__nav-mail::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  background-image: url(../images/mail.svg);
+  width: 22px;
+  height: 16px;
+}
+.footer__nav-phone::before{
+  background-image: url(../images/phone.svg);
+  width: 21px;
+  height: 21px;
+}
+.footer__social{
+  margin-top: 40px;
+  margin-left: 97px;
+}
+.footer__social-list{
+  display: flex;
+  gap: 0 20px;
+  align-items: center;
+}
+.footer__social-link{
+  display: grid;
+}
+.footer__bottom{
+  display: flex;
+}
+.footer__copy{
+  font-size: 16px;
+  margin-right: 192px;
+}
+.partners-logo{
+  display:flex;
+  align-items: center;
+  gap: 0 20px;
+}
 
 
 @media (max-width: 1000px) {
@@ -420,6 +527,24 @@ body {
   }
   .prioritise__list{
     gap: 30px 210px;
+  }
+  .footer__inner{
+    margin-bottom: 55px;
+  }
+  .footer__blockquote{
+    width: 270px;
+  }
+  .footer__blockquote {
+    margin-top: 0;
+}
+  .footer__copy{
+    margin-right: 85px;
+  }
+  .footer__nav-logo{
+    margin-right: 35px;
+  }
+  .footer__contacts{
+    width: 270px;
   }
 }
 @media (max-width: 860px) {
@@ -517,6 +642,21 @@ body {
   .prioritise__list{
     gap: 30px 133px;
   }
+  .footer__inner{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
+  .footer__products,
+  .footer__company{
+    grid-row: span 3;
+  }
+  .footer__contacts{
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+  }
+  .footer__copy{
+    margin-right: 120px;
+  }
 }
 @media (max-width: 680px) {
   .container {
@@ -589,6 +729,54 @@ body {
   .title{
     margin-bottom: 30px;
   }
+  .footer__inner{
+    display: flex;
+    flex-wrap: wrap; 
+  }
+  .footer__blockquote{
+    width: 100%;
+  }
+  .footer__blockquote-text{
+    margin-top: 50px;
+    margin-bottom: 10px;
+  }
+  .footer__blockquote-author span{
+    display: inline;
+  }
+  .footer__contacts{
+    margin-top: 50px;
+    width: 100%;
+  }
+  .footer__contacts-text{
+    text-align: center;
+  }
+  .footer__contacts-title{
+    text-align: center;
+  }
+  .footer__products-title,
+  .footer__company-title,
+  .footer__contacts-title{
+    margin-bottom: 30px;
+  }
+  .footer__nav{
+    flex-wrap: nowrap;
+  }
+  .footer__social{
+    margin-left: 30px;
+  }
+  .footer__copy{
+    margin-right: auto;
+  }
+  .footer__products{
+    margin-right: auto;
+    padding-right: 20px;
+  }
+  .footer__company{
+    padding-right: 20px;
+  }
+  .footer{
+    padding: 50px 0 10px;
+  }
 }
 @media (max-width: 460px){
   .title{
@@ -596,6 +784,20 @@ body {
   }
   .reviews__item{
     flex-basis: auto;
+  }
+  .footer__company{
+    padding-right: 15px;
+  }
+  .footer__products{
+    padding-right: 10px;
+  }
+  .footer__nav{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer__social{
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 @media (max-width: 360px) {
